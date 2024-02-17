@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="src/style.css" />
+    <style>
+    @import url('https://fonts.googleapis.com/css2?family=Anton&family=Poppins:ital,wght@0,100;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+    </style>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <title>Weather App</title>
+  </head>
+
+  <body>
+      <img class="logo" src="https://s3.amazonaws.com/shecodesio-production/uploads/files/000/115/800/original/Screenshot_from_2024-02-17_09-17-11.png?1708179499"/> <div class="weather-app">
+    <header>      
+        <form id="search-form">
+          <input type="search" placeholder="Enter a City" class="input-bar" id="search-input"/>
+          <input type="submit" value="Search" class="button" />
+        </form>
+    </header> 
+    <main>
+        <div class="hero-area">
+          <div><h1 class="city-name">Ottawa</h1>
+          <p>
+            <span id="current-date">Friday, Jan 19, 9:59 AM</span>, scattered clouds
+            <br />
+            Humidity: <strong class="details-bolded" id="current-humidity">88%</strong>, Wind:
+            <strong class="details-bolded" id="current-wind">3.13km/h</strong>
+          </p>
+        </div>
+          <div class="main-temp">
+            <div class="weather-icon">🌥</div>
+            <div class="main-temp-value">20°c</div>
+          </div>
+        </div>
+      </div>
+    </main>
+    <footer>
+      Coded by
+      <a class="footer-links" href="https://github.com/nberts">Nina Bertrand</a
+      >, is open sourced on
+      <a class="footer-links" href="https://github.com/nberts/WeatherApplication"
+        >GitHub</a
+      >
+      & hosted on
+      <a
+        class="footer-links"
+        href="https://nina-weather-forecast.netlify.app/" 
+        >Netlify</a
+      >
+    </footer>
+    </div>
+    <script src="src/script.js"></script>
+  </body>
+</html>
