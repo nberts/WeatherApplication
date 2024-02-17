@@ -37,7 +37,7 @@ header {
 
 .button {
   background: #ffcd00;
-  color: #353535;
+  color: #000000;
   border-radius: 8%;
   padding: 15px 30px;
   margin-left: 5px;
@@ -87,6 +87,12 @@ p {
 
 .details-bolded {
   color: #ffcd00;
+}
+
+.forecast {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 30px;
 }
 
 footer {
