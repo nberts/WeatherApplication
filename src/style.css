@@ -72,6 +72,7 @@ p {
 
 .main-temp {
   display: flex;
+  align-items: center;
 }
 
 .weather-icon {
@@ -91,14 +92,24 @@ p {
 
 .forecast {
   display: flex;
-  justify-content: space-around;
+  justify-content: space-evenly;
   margin-top: 30px;
+  padding: 10px;
+}
+
+.weather-forecast-temperatures {
+  text-align: center;
+  font-size: 15px;
+}
+
+.weather-forecast-icon {
+  justify-content: space-evenly;
 }
 
 footer {
   text-align: center;
   font-size: 14px;
-  color: #353535;
+  color: #1c9cf6;
 }
 
 .footer-links {

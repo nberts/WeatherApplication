@@ -34,11 +34,11 @@ function unixTimeToRealTime(unixTimestamp) {
   const date = new Date(timestampInMilliseconds);
 
   const options = {
-    weekday: "long",
+    weekday: "short",
     month: "short",
     day: "numeric",
-    hour: "numeric",
-    minute: "numeric",
+    //hour: "numeric",
+    //minute: "numeric",
   };
 
   return date.toLocaleString(undefined, options);
@@ -46,8 +46,8 @@ function unixTimeToRealTime(unixTimestamp) {
 
 function getForecast(city) {
   let apiKey = "48faoe8ab18e23t93c002654f81bbf6e";
-  let apiUrl = `https://api.shecodes.io/weather/v1/forecast?query={query}&key={key}`;
-  axios(apiUrl).then(displayForecast);
+  let apiUrl = `https://api.shecodes.io/weather/v1/forecast?query=${city}&key=${apiKey}`;
+  axios.get(apiUrl).then(displayForecast);
 }
 
 function displayForecast(response) {
@@ -61,17 +61,19 @@ function displayForecast(response) {
         forecastHTML +
         ` <div class="row">
         <div class="col-2">
-            <div class="weather-forecast-date">${formatDay(day.time)}</div>
+            <div class="weather-forecast-date">${unixTimeToRealTime(
+              day.time
+            )}</div>
             <div>
             <img src="${
               day.condition.icon_url
             }" class="weather-forecast-icon" />
         </div>
         <div class="weather-forecast-temperatures">
-            <span class="weather-forecast-temperatures-max">${Math.round(
+            <span class="weather-forecast-temperatures-max"> High: ${Math.round(
               day.temperature.maximum
-            )}° </span>
-            <span class="weather-forecast-temperature-min">${Math.round(
+            )}° </span> <br>
+            <span class="weather-forecast-temperature-min">Low: ${Math.round(
               day.temperature.minimum
             )}° </span>
         </div>
@@ -84,3 +86,4 @@ function displayForecast(response) {
 
 let searchForm = document.querySelector("#search-form");
 searchForm.addEventListener("submit", search);
+getForecast("Ottawa");
